@@ -42,3 +42,16 @@ bea_clean <- bea_tidier %>%
                  ~as.numeric(.))
 
 glimpse(bea_clean)
+
+# remaming things
+
+bea_clean <- bea_clean %>%
+  rename(Mining = `  Mining, quarrying, and oil and gas extraction`, 
+         Ag = `  Agriculture, forestry, fishing and hunting`)
+
+
+bea_clean <- bea_clean %>%
+  filter(GeoFIPS != " \"20000\"")
+
+head(bea_clean)
+
